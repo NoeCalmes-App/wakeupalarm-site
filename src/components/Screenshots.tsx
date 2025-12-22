@@ -2,6 +2,10 @@ import image1 from '../assets/image/1.png';
 import image3 from '../assets/image/3.png';
 import image5 from '../assets/image/5.png';
 import image7 from '../assets/image/7.png';
+import image1En from '../assets/image/1.en.png';
+import image3En from '../assets/image/3.en.png';
+import image5En from '../assets/image/5.en.png';
+import image7En from '../assets/image/7.en.png';
 
 interface ScreenshotsProps {
   lang: 'en' | 'fr';
@@ -18,7 +22,9 @@ export default function Screenshots({ lang }: ScreenshotsProps) {
   };
 
   const text = content[lang];
-  const screenshots = [image1, image3, image5, image7];
+  const screenshots = lang === 'en'
+    ? [image1En, image3En, image5En, image7En]
+    : [image1, image3, image5, image7];
 
   return (
     <section className="py-20 px-6 bg-onboarding-background">
