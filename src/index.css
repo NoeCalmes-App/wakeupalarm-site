@@ -4,7 +4,32 @@
 
 @layer base {
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+    @apply bg-onboarding-background;
+  }
+
+  /* Custom scrollbar styles */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #343A4E #151825;
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #151825;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #343A4E;
+    border-radius: 6px;
+    border: 3px solid #151825;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #5E6266;
   }
 }
 

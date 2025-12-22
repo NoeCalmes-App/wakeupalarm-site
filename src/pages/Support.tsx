@@ -1,116 +1,82 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../App';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Mail, Clock } from 'lucide-react';
+import { Headphones, Mail } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Support() {
+  const { lang, setLang } = useContext(LanguageContext);
+
+  const content = {
+    en: {
+      title: 'Support - WakeUp Alarm',
+      needHelp: 'Need help?',
+      description: 'Having an issue with the WakeUp Alarm app or have a question? We\'re here to help!',
+      contactUs: 'Contact us',
+      contactDescription: 'Send us an email and we\'ll get back to you as soon as possible:',
+      responseTime: 'We typically respond within 1 to 2 business days.',
+      backHome: '← Back to home'
+    },
+    fr: {
+      title: 'Support - WakeUp Alarme',
+      needHelp: 'Besoin d\'aide ?',
+      description: 'Tu rencontres un problème avec l\'application WakeUp Alarme ou tu as une question ? On est là pour t\'aider !',
+      contactUs: 'Contacte-nous',
+      contactDescription: 'Envoie-nous un email et on te répondra aussi vite que possible :',
+      responseTime: 'Nous répondons généralement sous 1 à 2 jours ouvrés.',
+      backHome: '← Retour à l\'accueil'
+    }
+  };
+
+  const text = content[lang];
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-gradient-to-r from-[#d8e6f0] to-[#8fb8d4] py-4 px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-2xl font-bold text-[#8fb8d4]">P</span>
-            </div>
-            <span className="text-2xl font-bold text-white">Punchlines</span>
-          </Link>
-        </div>
-      </header>
+    <div className="min-h-screen bg-onboarding-background">
+      <Header lang={lang} setLang={setLang} />
 
       <div className="max-w-4xl mx-auto px-6 py-12">
-        <Link to="/" className="inline-flex items-center gap-2 text-[#8fb8d4] hover:text-[#6a9abb] mb-8 font-semibold">
-          <ArrowLeft size={20} />
-          Retour à l'accueil
-        </Link>
+        <h1 className="text-2xl md:text-4xl font-bold text-onboarding-title mb-8">{text.title}</h1>
 
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Support</h1>
-
-        <div className="bg-white rounded-2xl shadow-md p-8 space-y-8">
-          <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Besoin d'Aide ?</h2>
-            <p className="text-gray-700">
-              Notre équipe est là pour vous aider. Que vous ayez une question technique, une suggestion d'amélioration ou que vous rencontriez un problème, n'hésitez pas à nous contacter.
+        <div className="bg-onboarding-card rounded-2xl shadow-md p-6 space-y-8 text-center">
+          <section className="flex flex-col items-center">
+            <Headphones size={52} className="text-onboarding-button-bg mb-4" />
+            <h2 className="text-2xl font-bold text-onboarding-title mb-4">{text.needHelp}</h2>
+            <p className="text-onboarding-subtitle text-lg">
+              {text.description}
             </p>
           </section>
 
-          <section className="bg-gradient-to-br from-[#d8e6f0] to-[#b8d4e6] rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Contactez-nous</h2>
-
-            <div className="space-y-4">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="text-[#8fb8d4]" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Email</h3>
-                  <a
-                    href="mailto:support@thepunchlines.app"
-                    className="text-[#6a9abb] hover:underline font-semibold text-lg"
-                  >
-                    support@thepunchlines.app
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="text-[#8fb8d4]" size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-2">Délai de Réponse</h3>
-                  <p className="text-gray-700">
-                    Nous répondons généralement sous 1 à 2 jours ouvrables
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Questions Fréquentes</h2>
-
-            <div className="space-y-4">
-              <div className="border-l-4 border-[#8fb8d4] pl-4">
-                <h3 className="font-bold text-gray-900 mb-2">Comment personnaliser mes affirmations ?</h3>
-                <p className="text-gray-700">
-                  Accédez aux paramètres de l'application et sélectionnez vos préférences de contenu. Vous pouvez choisir les catégories qui vous intéressent et créer vos propres affirmations personnalisées.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-[#8fb8d4] pl-4">
-                <h3 className="font-bold text-gray-900 mb-2">L'application est-elle gratuite ?</h3>
-                <p className="text-gray-700">
-                  Oui, Punchlines est gratuite avec des fonctionnalités de base. Des options premium sont disponibles pour débloquer du contenu supplémentaire.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-[#8fb8d4] pl-4">
-                <h3 className="font-bold text-gray-900 mb-2">Comment supprimer mon compte ?</h3>
-                <p className="text-gray-700">
-                  Vous pouvez demander la suppression de votre compte en nous contactant à l'adresse email ci-dessus. Nous traiterons votre demande dans les plus brefs délais.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-[#8fb8d4] pl-4">
-                <h3 className="font-bold text-gray-900 mb-2">L'application fonctionne-t-elle hors ligne ?</h3>
-                <p className="text-gray-700">
-                  Une fois les affirmations téléchargées, vous pouvez les consulter hors ligne. Cependant, certaines fonctionnalités nécessitent une connexion internet.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className="bg-gray-50 rounded-xl p-6">
-            <p className="text-center text-gray-700">
-              Vous n'avez pas trouvé la réponse à votre question ?<br />
+            <h2 className="text-2xl font-bold text-onboarding-title mb-4">{text.contactUs}</h2>
+            <p className="text-onboarding-subtitle mb-4">
+              {text.contactDescription}
+            </p>
+            <div className="bg-onboarding-background rounded-xl p-5 inline-flex items-center gap-3 mb-4">
+              <Mail size={24} className="text-onboarding-title" />
               <a
-                href="mailto:support@thepunchlines.app"
-                className="text-[#8fb8d4] hover:underline font-semibold"
+                href="mailto:support@wakeupalarm.app"
+                className="text-onboarding-title font-semibold text-lg"
               >
-                Contactez notre équipe support
+                support@wakeupalarm.app
               </a>
+            </div>
+            <p className="text-onboarding-subtitle">
+              {text.responseTime}
             </p>
+          </section>
+
+          <section className="pt-4">
+            <Link
+              to="/"
+              className="text-onboarding-button-bg hover:text-onboarding-subtitle font-semibold"
+            >
+              {text.backHome}
+            </Link>
           </section>
         </div>
       </div>
+      <Footer lang={lang} />
     </div>
   );
 }

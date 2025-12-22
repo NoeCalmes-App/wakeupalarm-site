@@ -7,4 +7,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  // Pour GitHub Pages - change 'wakeupalarm-site' par le nom de ton repo GitHub
+  base: '/',
 });

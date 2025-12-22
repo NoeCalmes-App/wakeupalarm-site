@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { LanguageContext } from '../App';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
@@ -7,7 +8,7 @@ import FrenchSection from '../components/FrenchSection';
 import Footer from '../components/Footer';
 
 export default function Home() {
-  const [lang, setLang] = useState<'en' | 'fr'>('fr');
+  const { lang, setLang } = useContext(LanguageContext);
 
   return (
     <div className="min-h-screen bg-white">
@@ -16,7 +17,7 @@ export default function Home() {
       <Features lang={lang} />
       <Screenshots lang={lang} />
       <FrenchSection />
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }
