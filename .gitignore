@@ -21,3 +21,11 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Fichiers lourds (plus de 100MB interdits sur GitHub)
+*.dmg
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.iso
