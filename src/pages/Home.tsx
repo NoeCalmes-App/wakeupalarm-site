@@ -16,7 +16,7 @@ export default function Home() {
       <Hero lang={lang} />
       <Features lang={lang} />
       <Screenshots lang={lang} />
-      <FrenchSection />
+      <FrenchSection lang={lang} />
       <Footer lang={lang} />
     </div>
   );

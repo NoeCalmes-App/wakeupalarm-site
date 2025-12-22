@@ -1,3 +1,7 @@
+interface FrenchSectionProps {
+  lang: 'en' | 'fr';
+}
+
 const AppleIcon = () => (
   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
     <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
@@ -10,15 +14,32 @@ const GooglePlayIcon = () => (
   </svg>
 );
 
-export default function FrenchSection() {
+export default function FrenchSection({ lang }: FrenchSectionProps) {
+  const content = {
+    en: {
+      title: 'Tired of waking up half-asleep?',
+      description: 'WakeUp Alarm forces you to actually get up. Scan a QR code in your bathroom, solve math problems to activate your brain, or shake your phone until you\'re fully awake. No mercy, just results.',
+      appStore: 'App Store',
+      googlePlay: 'Google Play'
+    },
+    fr: {
+      title: 'Marre de te réveiller à moitié ?',
+      description: 'WakeUp Alarm te force à te lever pour de vrai. Scanne un QR code dans ta salle de bain, résous des calculs pour activer ton cerveau, ou secoue ton téléphone jusqu\'à ce que tu sois bien réveillé. Pas de pitié, que des résultats.',
+      appStore: 'Appstore',
+      googlePlay: 'Google Play'
+    }
+  };
+
+  const text = content[lang];
+
   return (
     <section className="py-20 px-6 bg-onboarding-background-secondary">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-onboarding-title mb-7 md:mb-6">
-          Marre de te réveiller à moitié ?
+          {text.title}
         </h2>
         <p className=" text-lg md:text-xl text-onboarding-subtitle mb-8">
-          WakeUp Alarm te force à te lever pour de vrai. Scanne un QR code dans ta salle de bain, résous des calculs pour activer ton cerveau, ou secoue ton téléphone jusqu'à ce que tu sois bien réveillé. Pas de pitié, que des résultats.
+          {text.description}
         </p>
         <div className="flex flex-row gap-2 md:gap-4 w-full md:w-auto justify-center">
           <a
@@ -26,14 +47,14 @@ export default function FrenchSection() {
             className="flex-1 md:flex-initial flex items-center justify-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 bg-onboarding-button-bg text-onboarding-button-text rounded-xl text-sm md:text-base font-semibold hover:opacity-90 transition-all hover:-translate-y-1 shadow-lg whitespace-nowrap"
           >
             <AppleIcon />
-            <span>Appstore</span>
+            <span>{text.appStore}</span>
           </a>
           <a
             href="#"
             className="flex-1 md:flex-initial flex items-center justify-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 bg-onboarding-background text-onboarding-title rounded-xl text-sm md:text-base font-semibold transition-all hover:-translate-y-1 shadow-lg whitespace-nowrap"
           >
             <GooglePlayIcon />
-            <span>Google Play</span>
+            <span>{text.googlePlay}</span>
           </a>
         </div>
       </div>
