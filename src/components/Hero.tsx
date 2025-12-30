@@ -23,14 +23,16 @@ export default function Hero({ lang }: HeroProps) {
       subtitle: 'The alarm that actually gets you out of bed',
       description: 'No more hitting snooze 10 times. WakeUp Alarm forces you to complete interactive missions before shutting off. Math problems, QR codes, shake challenges - choose your weapon.',
       appStore: 'Download on the App Store',
-      googlePlay: 'Get it on Google Play'
+      googlePlay: 'Get it on Google Play',
+      subtext: 'Wake up with interactive missions, stay motivated with daily affirmations. Smart alarm that adapts to your routine.'
     },
     fr: {
-      title: 'L’alarme qui te force à te réveiller',
+      title: 'L\'alarme qui te force à te réveiller',
       subtitle: 'Le réveil qui te fait vraiment sortir du lit',
       description: 'Fini de répéter l\'alarme 10 fois. WakeUp Alarm t\'oblige à accomplir des missions interactives avant de s\'éteindre. Calcul mathématique, faire des pas ,secouer le téléphone...',
       appStore: 'Télécharger sur l\'App Store',
-      googlePlay: 'Disponible sur Google Play'
+      googlePlay: 'Disponible sur Google Play',
+      subtext: 'Réveillez-vous avec des missions interactives, restez motivé avec des affirmations quotidiennes. Alarme intelligente qui s\'adapte à votre routine.'
     }
   };
 
@@ -68,6 +70,10 @@ export default function Hero({ lang }: HeroProps) {
                 <span className="sm:hidden">Play Store</span>
               </a>
             </div>
+
+            <p className="mt-6 text-xs md:text-sm text-onboarding-subtitle/80 max-w-md">
+              {text.subtext}
+            </p>
           </div>
 
           <div className="order-2">
