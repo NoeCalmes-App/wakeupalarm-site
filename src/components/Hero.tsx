@@ -52,7 +52,9 @@ export default function Hero({ lang }: HeroProps) {
             </p>
             <div className="flex flex-row gap-2 md:gap-4 w-full md:w-auto">
               <a
-                href="#"
+                href="https://apps.apple.com/fr/app/wakeup-alarme/id6756490584"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 md:flex-initial flex items-center justify-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 bg-onboarding-button-bg text-onboarding-button-text rounded-xl text-sm md:text-base font-semibold hover:opacity-90 transition-all hover:-translate-y-1 shadow-lg whitespace-nowrap"
               >
                 <AppleIcon />
