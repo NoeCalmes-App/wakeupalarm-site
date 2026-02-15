@@ -52,7 +52,9 @@ export default function FrenchSection({ lang }: FrenchSectionProps) {
             <span>{text.appStore}</span>
           </a>
           <a
-            href="#"
+            href="https://play.google.com/store/apps/details?id=com.noecalmes.wakeupalarm&hl=fr"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 md:flex-initial flex items-center justify-center gap-2 md:gap-3 px-4 md:px-6 py-3 md:py-4 bg-onboarding-background text-onboarding-title rounded-xl text-sm md:text-base font-semibold transition-all hover:-translate-y-1 shadow-lg whitespace-nowrap"
           >
             <GooglePlayIcon />
