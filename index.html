@@ -15,6 +15,15 @@
     <meta name="twitter:image" content="https://wakeupalarm.app/src/assets/image/app.png" />
   </head>
   <body>
+    <script>
+      (function() {
+        var redirect = sessionStorage.getItem('spa_redirect');
+        if (redirect) {
+          sessionStorage.removeItem('spa_redirect');
+          window.history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
