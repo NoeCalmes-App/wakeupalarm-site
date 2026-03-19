@@ -3,6 +3,12 @@
   command = "npm run build"
   publish = "dist"
 
+# Serve static privacy page directly (for bots/crawlers & Google Play verification)
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
 # Redirection pour React Router (SPA)
 [[redirects]]
   from = "/*"
