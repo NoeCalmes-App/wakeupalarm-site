@@ -12,13 +12,15 @@ export default function Footer({ lang }: FooterProps) {
       privacy: 'Privacy',
       terms: 'Terms',
       support: 'Support',
-      copyright: '© 2023 WakeUp Alarme. All rights reserved.'
+      copyright: '© 2023 WakeUp Alarme. All rights reserved.',
+      credit: 'App and website designed by Noé Calmes'
     },
     fr: {
       privacy: 'Confidentialité',
       terms: 'Conditions',
       support: 'Support',
-      copyright: '© 2023 WakeUp Alarme. Tous droits réservés.'
+      copyright: '© 2023 WakeUp Alarme. Tous droits réservés.',
+      credit: 'Application et site conçus par Noé Calmes'
     }
   };
 
@@ -46,6 +48,11 @@ export default function Footer({ lang }: FooterProps) {
         </div>
         <div className="mt-8 pt-8 text-center text-sm text-onboarding-subtitle">
           {text.copyright}
+          <p className="mt-2">
+            <a href="https://noecalmes.fr" target="_blank" rel="noopener" className="hover:text-onboarding-title hover:underline underline-offset-2 transition-colors">
+              {text.credit}
+            </a>
+          </p>
         </div>
       </div>
     </footer>
